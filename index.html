@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vepamani Murali — Android Engineer & Tech Lead</title>
+<meta name="description" content="Senior Android Engineer & Tech Lead with 8+ years building production Android apps across fintech, e-commerce, edtech and productivity. Based in Bangalore, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-950:#0a2620;
+    --green-900:#0e3b2e;
+    --green-800:#154937;
+    --green-700:#1f5c45;
+    --lime-400:#b7e08a;
+    --lime-300:#d3edaf;
+    --cream-50:#f7f5ef;
+    --cream-100:#efece2;
+    --ink-900:#10231c;
+    --ink-600:#425b50;
+    --ink-400:#6d8579;
+    --line:#dedad0;
+    --radius:14px;
+    --font-display:"Sora", sans-serif;
+    --font-body:"Inter", sans-serif;
+    --font-mono:"JetBrains Mono", monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--cream-50);
+    color:var(--ink-900);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  section{padding:96px 0;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+  h1,h2,h3,h4{font-family:var(--font-display); color:var(--green-950); letter-spacing:-0.01em;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--green-700); margin-bottom:16px;
+  }
+  .eyebrow::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--lime-400); box-shadow:0 0 0 3px rgba(183,224,138,0.35);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-body); font-weight:600; font-size:15px;
+    padding:13px 24px; border-radius:999px; border:1.5px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--green-950); color:var(--cream-50);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(10,38,32,0.25);}
+  .btn-ghost{border-color:var(--green-950); color:var(--green-950);}
+  .btn-ghost:hover{background:var(--green-950); color:var(--cream-50);}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,245,239,0.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{max-width:1120px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between;}
+  .logo{font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--green-950); display:flex; align-items:center; gap:8px;}
+  .logo-mark{width:28px; height:28px; border-radius:8px; background:linear-gradient(155deg, var(--green-900), var(--green-700)); display:flex; align-items:center; justify-content:center; color:var(--lime-300); font-family:var(--font-mono); font-size:13px; font-weight:600;}
+  .nav-links{display:flex; gap:28px; font-size:14.5px; font-weight:500; color:var(--ink-600);}
+  .nav-links a:hover{color:var(--green-950);}
+  .nav-cta{display:flex; gap:10px;}
+  .menu-btn{display:none; background:none; border:none; font-size:22px; color:var(--green-950); cursor:pointer;}
+
+  /* HERO */
+  .hero{padding:88px 0 72px;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;}
+  .hero h1{font-size:52px; line-height:1.08; margin-bottom:20px; font-weight:700;}
+  .hero h1 em{font-style:normal; color:var(--green-800); background:linear-gradient(180deg, transparent 62%, var(--lime-300) 62%);}
+  .hero p.lede{font-size:17.5px; color:var(--ink-600); max-width:520px; margin-bottom:32px;}
+  .hero-ctas{display:flex; gap:12px; margin-bottom:44px; flex-wrap:wrap;}
+  .stat-row{display:flex; gap:40px; flex-wrap:wrap;}
+  .stat b{display:block; font-family:var(--font-display); font-size:30px; color:var(--green-950); font-weight:700;}
+  .stat span{font-size:13px; color:var(--ink-400); text-transform:uppercase; letter-spacing:0.05em;}
+
+  /* build card */
+  .build-card{
+    background:var(--green-950); border-radius:20px; padding:28px 26px;
+    font-family:var(--font-mono); font-size:13.5px; color:#cfe6d9;
+    box-shadow:0 24px 60px rgba(10,38,32,0.28);
+    position:relative; overflow:hidden;
+  }
+  .build-card::before{
+    content:"● ● ●"; letter-spacing:6px; color:#3a5c4c; font-size:11px; display:block; margin-bottom:16px;
+  }
+  .build-card .k{color:#8bb89e;}
+  .build-card .s{color:var(--lime-300);}
+  .build-card .c{color:#e9c88a;}
+  .status-pill{
+    margin-top:20px; display:inline-flex; align-items:center; gap:8px;
+    background:rgba(183,224,138,0.12); border:1px solid rgba(183,224,138,0.3);
+    color:var(--lime-300); padding:6px 12px; border-radius:999px; font-size:12px;
+  }
+  .status-pill::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--lime-400);}
+
+  /* SECTION HEADS */
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:34px; font-weight:700;}
+  .section-head p{color:var(--ink-600); font-size:16px; margin-top:12px;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  .about-grid p{color:var(--ink-600); margin-bottom:16px; font-size:16px;}
+  .about-grid strong{color:var(--green-950);}
+  .fact-list{display:flex; flex-direction:column; gap:18px; margin-top:8px;}
+  .fact{display:flex; gap:14px; padding:16px; background:var(--cream-100); border-radius:12px; border:1px solid var(--line);}
+  .fact-ico{width:36px; height:36px; border-radius:9px; background:var(--green-900); color:var(--lime-300); display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0;}
+  .fact b{display:block; font-size:14.5px; color:var(--green-950); margin-bottom:2px;}
+  .fact span{font-size:13.5px; color:var(--ink-400);}
+
+  /* DOMAINS */
+  .domain-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;}
+  .domain-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .domain-card:hover{transform:translateY(-4px); box-shadow:0 16px 32px rgba(10,38,32,0.08); border-color:var(--green-700);}
+  .domain-card .ico{font-size:22px; margin-bottom:14px;}
+  .domain-card h4{font-size:16px; margin-bottom:6px;}
+  .domain-card p{font-size:13.8px; color:var(--ink-600);}
+
+  /* SKILLS */
+  .skill-groups{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .skill-card{background:var(--cream-100); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px;}
+  .skill-card h4{font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--green-700); font-weight:600; margin-bottom:14px;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:13px; padding:6px 12px; border-radius:999px; background:#fff; border:1px solid var(--line); color:var(--ink-900); font-weight:500;
+  }
+
+  /* EXPERIENCE */
+  .timeline{position:relative; padding-left:32px; border-left:2px solid var(--line);}
+  .job{position:relative; padding-bottom:44px;}
+  .job:last-child{padding-bottom:0;}
+  .job::before{
+    content:""; position:absolute; left:-38px; top:4px; width:14px; height:14px; border-radius:50%;
+    background:var(--cream-50); border:3px solid var(--green-900);
+  }
+  .job.current::before{background:var(--lime-400); border-color:var(--green-900);}
+  .job-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
+  .job-title{font-family:var(--font-display); font-size:19px; font-weight:700; color:var(--green-950);}
+  .job-meta{font-size:13.5px; color:var(--ink-400); font-family:var(--font-mono);}
+  .job-company{font-size:14.5px; color:var(--green-700); font-weight:600; margin-bottom:12px;}
+  .job ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .job li{font-size:14.8px; color:var(--ink-600); padding-left:18px; position:relative;}
+  .job li::before{content:"—"; position:absolute; left:0; color:var(--ink-400);}
+  .current-tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; background:var(--lime-300); color:var(--green-950); padding:3px 9px; border-radius:999px; margin-left:8px;}
+
+  /* PROJECTS */
+  .project-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;}
+  .project-card{
+    background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; display:flex; flex-direction:column; gap:14px;
+    transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .project-card:hover{box-shadow:0 20px 40px rgba(10,38,32,0.1); transform:translateY(-4px);}
+  .project-top{display:flex; justify-content:space-between; align-items:flex-start;}
+  .project-tag{font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.04em; color:var(--green-700);}
+  .project-card h4{font-size:19px;}
+  .project-card p{font-size:14.5px; color:var(--ink-600);}
+  .project-card .chip-row{margin-top:auto; padding-top:6px;}
+  .project-card .chip{font-size:11.5px; padding:4px 10px; background:var(--cream-100);}
+  .project-link{font-size:13.5px; font-weight:600; color:var(--green-900); display:inline-flex; align-items:center; gap:6px; margin-top:4px;}
+  .flagship{border-color:var(--green-800); background:linear-gradient(180deg, #fff 0%, var(--cream-100) 100%);}
+
+  /* ACHIEVEMENTS */
+  .ach-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;}
+  .ach-card{padding:26px; border-radius:var(--radius); background:var(--green-950); color:var(--cream-50);}
+  .ach-card .num{font-family:var(--font-display); font-size:28px; font-weight:700; color:var(--lime-300); margin-bottom:10px;}
+  .ach-card h4{color:var(--cream-50); font-size:15.5px; margin-bottom:6px;}
+  .ach-card p{font-size:13.5px; color:#b7c9c0;}
+
+  /* CONTACT */
+  .contact-panel{
+    background:var(--green-950); border-radius:24px; padding:64px 56px; text-align:center; color:var(--cream-50);
+    position:relative; overflow:hidden;
+  }
+  .contact-panel::after{
+    content:""; position:absolute; inset:0; background:radial-gradient(circle at 80% 0%, rgba(183,224,138,0.14), transparent 55%);
+  }
+  .contact-panel h2{color:var(--cream-50); font-size:32px; margin-bottom:14px; position:relative;}
+  .contact-panel p{color:#b7c9c0; max-width:480px; margin:0 auto 32px; position:relative; font-size:15.5px;}
+  .contact-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; position:relative;}
+  .contact-panel .btn-primary{background:var(--lime-300); color:var(--green-950);}
+  .contact-panel .btn-ghost{border-color:#3a5c4c; color:var(--cream-50);}
+  .contact-panel .btn-ghost:hover{background:rgba(255,255,255,0.08);}
+
+  footer{padding:36px 0; border-top:1px solid var(--line);}
+  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:13.5px; color:var(--ink-400);}
+  .footer-links{display:flex; gap:18px;}
+  .footer-links a:hover{color:var(--green-950);}
+
+  @media (max-width:860px){
+    .hero-grid, .about-grid, .skill-groups{grid-template-columns:1fr;}
+    .domain-grid, .project-grid, .ach-grid{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:38px;}
+    .nav-links{display:none;}
+    .menu-btn{display:block;}
+    .contact-panel{padding:44px 24px;}
+  }
+  @media (max-width:560px){
+    .domain-grid, .project-grid, .ach-grid{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .stat-row{gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="logo"><span class="logo-mark">VM</span> Vepamani Murali</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary" style="padding:10px 20px; font-size:14px;">Hire me</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Open to Senior / Lead / Principal Android roles</div>
+        <h1>Android engineer who <em>ships</em>, not just codes.</h1>
+        <p class="lede">8+ years building production-grade Android apps across fintech, e-commerce, edtech and productivity — from UPI payment rails to PDF workspaces used by real people every day.</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="mailto:vepamanimurali495@gmail.com" class="btn btn-ghost">Contact me</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>8+</b><span>Years Android</span></div>
+          <div class="stat"><b>5</b><span>Companies</span></div>
+          <div class="stat"><b>69M+</b><span>Users reached</span></div>
+        </div>
+      </div>
+
+      <div class="build-card">
+        <div><span class="k">val</span> engineer = <span class="c">Engineer</span>(</div>
+        <div>&nbsp;&nbsp;name&nbsp;=&nbsp;<span class="s">"Vepamani Murali"</span>,</div>
+        <div>&nbsp;&nbsp;role&nbsp;=&nbsp;<span class="s">"Android Tech Lead"</span>,</div>
+        <div>&nbsp;&nbsp;based&nbsp;=&nbsp;<span class="s">"Bangalore, India"</span>,</div>
+        <div>&nbsp;&nbsp;stack&nbsp;=&nbsp;listOf(<span class="s">"Kotlin"</span>, <span class="s">"Compose"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Clean Arch"</span>, <span class="s">"Hilt"</span>, <span class="s">"Coroutines"</span>)</div>
+        <div>)</div>
+        <div>&nbsp;</div>
+        <div><span class="k">fun</span> main() { build().<span class="k">ship</span>() }</div>
+        <div class="status-pill">BUILD SUCCESSFUL · ready to deploy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2 style="font-size:30px; margin-bottom:20px;">End-to-end mobile ownership, not just feature work.</h2>
+          <p>I'm a <strong>Senior Android Engineer and Tech Lead</strong> based in Bangalore, with 8+ years of end-to-end mobile product experience — owning architecture decisions, leading cross-functional mobile teams, and shipping apps that serve millions of users across India.</p>
+          <p>My work spans <strong>UPI payment systems</strong> (OnePlus Pay), high-traffic fashion e-commerce (Tata CLiQ), OTT video infrastructure (upGrad), and IoT device ecosystems (Smartron). I write Kotlin-first, architect for maintainability, and treat CI/CD as a first-class product concern.</p>
+          <p>Currently building <strong>PDF Canvas</strong> — an independent productivity app challenging Adobe Acrobat in the Android ecosystem, under my own product studio, App Wise Softwares.</p>
+        </div>
+        <div class="fact-list">
+          <div class="fact"><div class="fact-ico">🎓</div><div><b>B.Tech, Electronics & Communication</b><span>JNTU Anantapur · Kuppam Engineering College</span></div></div>
+          <div class="fact"><div class="fact-ico">📍</div><div><b>Bangalore, India</b><span>Open to remote, hybrid & relocation</span></div></div>
+          <div class="fact"><div class="fact-ico">🏗️</div><div><b>Founder, App Wise Softwares</b><span>Independent product studio · PDF Canvas on Google Play</span></div></div>
+          <div class="fact"><div class="fact-ico">✍️</div><div><b>Author</b><span>"God don't let me believe in you"</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOMAINS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Domain coverage</div>
+        <h2>Shipped across product verticals</h2>
+      </div>
+      <div class="domain-grid">
+        <div class="domain-card"><div class="ico">💳</div><h4>Fintech & Payments</h4><p>UPI/NPCI, OnePlus Pay, Play Billing, secure SDK integrations</p></div>
+        <div class="domain-card"><div class="ico">🛍️</div><h4>E-Commerce</h4><p>Tata CLiQ Fashion — 69M+ downloads, high-scale product flows</p></div>
+        <div class="domain-card"><div class="ico">🎬</div><h4>OTT & Media</h4><p>ExoPlayer, Brightcove SDK bridge, DRM, live streaming</p></div>
+        <div class="domain-card"><div class="ico">🎓</div><h4>EdTech</h4><p>Video-heavy learning platform, offline content delivery</p></div>
+        <div class="domain-card"><div class="ico">📄</div><h4>Productivity</h4><p>PDF Canvas — viewer, editor, and document workspace</p></div>
+        <div class="domain-card"><div class="ico">📱</div><h4>IoT & Devices</h4><p>Smartron — companion app for smart home & device ecosystems</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Technical skills</div>
+        <h2>Full-stack Android expertise</h2>
+        <p>Deep, production-tested knowledge across the Android ecosystem — from architecture to release pipelines.</p>
+      </div>
+      <div class="skill-groups">
+        <div class="skill-card">
+          <h4>Languages</h4>
+          <div class="chip-row"><span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">XML</span></div>
+        </div>
+        <div class="skill-card">
+          <h4>UI & Architecture</h4>
+          <div class="chip-row"><span class="chip">Jetpack Compose</span><span class="chip">MVVM</span><span class="chip">MVI</span><span class="chip">Clean Architecture</span><span class="chip">Multi-Module</span><span class="chip">Material 3</span></div>
+        </div>
+        <div class="skill-card">
+          <h4>Jetpack & Android SDK</h4>
+          <div class="chip-row"><span class="chip">Hilt / Dagger</span><span class="chip">Coroutines</span><span class="chip">Flow</span><span class="chip">Room</span><span class="chip">WorkManager</span><span class="chip">CameraX</span></div>
+        </div>
+        <div class="skill-card">
+          <h4>Networking & Data</h4>
+          <div class="chip-row"><span class="chip">Retrofit</span><span class="chip">OkHttp</span><span class="chip">Moshi</span><span class="chip">GraphQL</span><span class="chip">Firebase</span></div>
+        </div>
+        <div class="skill-card">
+          <h4>Media & Payments</h4>
+          <div class="chip-row"><span class="chip">ExoPlayer</span><span class="chip">Brightcove SDK</span><span class="chip">UPI / NPCI</span><span class="chip">Play Billing</span><span class="chip">DRM</span></div>
+        </div>
+        <div class="skill-card">
+          <h4>DevOps & Tooling</h4>
+          <div class="chip-row"><span class="chip">GitHub Actions</span><span class="chip">Fastlane</span><span class="chip">Jenkins</span><span class="chip">Gradle / KTS</span><span class="chip">Play Console</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Work experience</div>
+        <h2>8+ years. 5 companies. Real impact.</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="job current">
+          <div class="job-head">
+            <div class="job-title">Lead Engineer – Android <span class="current-tag">Current</span></div>
+            <div class="job-meta">2025 – Present</div>
+          </div>
+          <div class="job-company">HTC Global Services · Bangalore, India</div>
+          <ul>
+            <li>Architected multi-module Android projects with Hilt, WorkManager, and Kotlin Version Catalogs for a large enterprise client portfolio.</li>
+            <li>Defined and enforced Clean Architecture + MVI standards across a cross-functional mobile team.</li>
+            <li>Won the Meijer Hackathon by building a prototype to solve a real-world inventory problem.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Tech Lead – Mobile</div>
+            <div class="job-meta">2024 – 2025</div>
+          </div>
+          <div class="job-company">upGrad Education · Bangalore, India</div>
+          <ul>
+            <li>Built video-heavy learning modules using ExoPlayer with adaptive bitrate streaming, offline download, and resume-playback.</li>
+            <li>Reduced Gradle build time by 2× via build cache, configuration caching, and dependency optimization.</li>
+            <li>Delivered OTT architecture with DRM-protected ExoPlayer playback and a modular media pipeline.</li>
+            <li>Built and maintained React Native bridge modules for Brightcove video player on Android.</li>
+            <li>Led CI/CD modernization with GitHub Actions + BitRise, reducing release cycle time significantly.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">SDE II</div>
+            <div class="job-meta">2021 – 2024</div>
+          </div>
+          <div class="job-company">Tata CLiQ (Tata Unistore Ltd.) · Mumbai / Remote</div>
+          <ul>
+            <li>Contributed to the Tata CLiQ Fashion app (69M+ downloads), owning product listing, search, and checkout flows.</li>
+            <li>Achieved a 30% reduction in ANR rate through profiling, coroutine migration, and main-thread offloading.</li>
+            <li>Built a custom paginated product grid with RecyclerView + Paging 3 and skeleton loading states.</li>
+            <li>Integrated UPI, card, and net-banking payment flows within the checkout pipeline.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Senior Engineer</div>
+            <div class="job-meta">2019 – 2021</div>
+          </div>
+          <div class="job-company">OnePlus Software R&D Centre · Hyderabad, India</div>
+          <ul>
+            <li>Built OnePlus Pay — a native UPI wallet achieving a 99.99% payment success rate via robust NPCI integration.</li>
+            <li>Awarded Employee of the Month twice for exceptional delivery velocity and code quality.</li>
+            <li>Worked on OxygenOS pre-installed apps, tight hardware-software integration, and AOSP customization.</li>
+            <li>Delivered Play Billing subscription management flows with promotional pricing support.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Software Development Engineer</div>
+            <div class="job-meta">2015 – 2017</div>
+          </div>
+          <div class="job-company">Smartron India · Hyderabad, India</div>
+          <ul>
+            <li>Developed a rich Gallery app for all media files with cloud backup.</li>
+            <li>Built the companion Android app for Smartron's IoT device ecosystem.</li>
+            <li>Delivered device pairing, sync, and control features using BLE, WiFi Direct, and REST APIs.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Projects & apps</div>
+        <h2>Apps shipped to real users</h2>
+      </div>
+      <div class="project-grid">
+
+        <div class="project-card flagship">
+          <div class="project-top">
+            <span class="project-tag">Personal · Live on Play Store</span>
+          </div>
+          <h4>📄 PDF Canvas</h4>
+          <p>A full-featured Android PDF productivity app built to compete with Adobe Acrobat. Advanced text editing with PdfBox-Android, a pinch-to-zoom viewer, and subscription billing via Play Billing. Built with Jetpack Compose, Clean Architecture, and Hilt.</p>
+          <div class="chip-row"><span class="chip">Kotlin</span><span class="chip">Compose</span><span class="chip">PdfBox-Android</span><span class="chip">Hilt</span><span class="chip">Room</span></div>
+          <a class="project-link" href="https://play.google.com/store/apps/details?id=com.appwise.allpdfproblems" target="_blank">▶ Play Store</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top"><span class="project-tag">E-Commerce · Tata Group</span></div>
+          <h4>Tata CLiQ Fashion</h4>
+          <p>India's premium fashion e-commerce app with 69M+ downloads. Owned the paginated product grid, search, and checkout flows, and cut ANR rate by 30% through profiling and coroutine migration.</p>
+          <div class="chip-row"><span class="chip">Kotlin</span><span class="chip">Paging 3</span><span class="chip">Coroutines</span><span class="chip">UPI</span></div>
+          <a class="project-link" href="https://play.google.com/store/apps/details?id=com.tul.tatacliq" target="_blank">▶ Play Store</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top"><span class="project-tag">Fintech · OEM Platform</span></div>
+          <h4>💳 OnePlus Pay / UPI Wallet</h4>
+          <p>Native UPI payment wallet pre-installed on OxygenOS. Achieved a 99.99% payment success rate through robust NPCI integration and resilient error recovery, plus bank linking and P2P transfers.</p>
+          <div class="chip-row"><span class="chip">Kotlin</span><span class="chip">UPI / NPCI</span><span class="chip">AOSP</span><span class="chip">Play Billing</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top"><span class="project-tag">EdTech · Online Education</span></div>
+          <h4>🎓 upGrad Learning App</h4>
+          <p>Video-heavy edtech platform with adaptive streaming, offline download, and resume-playback for millions of learners. Led the Compose migration for core UI screens.</p>
+          <div class="chip-row"><span class="chip">ExoPlayer</span><span class="chip">Compose</span><span class="chip">Firebase</span><span class="chip">WorkManager</span></div>
+          <a class="project-link" href="https://play.google.com/store/apps/details?id=com.upgrad.student" target="_blank">▶ Play Store</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Recognition & impact</div>
+        <h2>Measurable outcomes</h2>
+      </div>
+      <div class="ach-grid">
+        <div class="ach-card"><div class="num">99.99%</div><h4>Payment success rate</h4><p>OnePlus Pay, via robust NPCI integration and error-recovery design.</p></div>
+        <div class="ach-card"><div class="num">30%</div><h4>ANR reduction</h4><p>At Tata CLiQ through profiling, coroutine migration, and main-thread offloading.</p></div>
+        <div class="ach-card"><div class="num">2×</div><h4>Gradle build speed</h4><p>At upGrad via configuration caching and dependency graph optimization.</p></div>
+        <div class="ach-card"><div class="num">69M+</div><h4>App downloads</h4><p>Contributed to Tata CLiQ Fashion, one of India's largest e-commerce apps.</p></div>
+        <div class="ach-card"><div class="num">🏆</div><h4>Meijer Hackathon Winner</h4><p>Built a prototype solving a real-world inventory problem.</p></div>
+        <div class="ach-card"><div class="num">⭐×2</div><h4>Employee of the Month</h4><p>Awarded twice at OnePlus for delivery velocity and engineering quality.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel">
+        <h2>Let's build something great together.</h2>
+        <p>Open to Senior Android Engineer, Mobile Tech Lead, and Principal Engineer roles. Available for full-time, contract, and consulting engagements.</p>
+        <div class="contact-ctas">
+          <a href="mailto:vepamanimurali495@gmail.com" class="btn btn-primary">✉ Email me</a>
+          <a href="https://www.linkedin.com/in/muralivepamani/" target="_blank" class="btn btn-ghost">in LinkedIn</a>
+          <a href="https://github.com/muralivepamani" target="_blank" class="btn btn-ghost">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 Vepamani Murali. Bangalore, India.</span>
+    <div class="footer-links">
+      <a href="mailto:vepamanimurali495@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/muralivepamani/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/muralivepamani" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
